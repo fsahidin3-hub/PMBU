@@ -95,34 +95,35 @@ body {
     color: #006400;
 }
 
-/* STYLING BARU UNTUK IKON LOKASI KUSTOM */
+/* STYLING IKON LOKASI KUSTOM */
 .location-custom-icon {
     width: 25px; 
     height: auto;
     margin-right: 15px; 
-    /* Mengubah ikon hitam menjadi hijau */
     filter: invert(30%) sepia(90%) saturate(700%) hue-rotate(90deg) brightness(80%);
 }
 
 /* STYLING KHUSUS UNTUK BLOK LOKASI DENGAN LINK */
 .location-block-with-link {
-    align-items: flex-start; /* Agar ikon berada di bagian atas teks */
+    align-items: center; /* FIX: Ini yang membuat ikon dan teks sejajar di tengah secara vertikal */
 }
 .location-text-group {
     display: flex;
-    flex-direction: column; /* Teks alamat dan link Maps bertumpuk */
-    align-items: flex-start; /* Meratakan teks ke kiri */
+    flex-direction: column; 
+    align-items: flex-start; /* JANGAN UBAH INI: agar teks Alamat dan Link Maps rata kiri di kolomnya sendiri */
+    text-align: left; /* FIX: Pastikan teks di dalam kolom ini rata kiri */
+    margin-top: -10px; /* FIX: Sesuaikan posisi agar lebih sejajar dengan ikon vertikal */
 }
 .location-text-group span {
     font-size: 1em; 
 }
-/* STYLE UNTUK LINK GOOGLE MAPS BARU */
+/* STYLE UNTUK LINK GOOGLE MAPS */
 .maps-link {
     font-size: 0.9em;
     font-weight: 500;
-    color: #006400; /* Warna hijau */
+    color: #006400; 
     text-decoration: none;
-    margin-top: 2px; /* Jarak antara alamat dan link maps */
+    margin-top: 2px; 
     
 }
 .maps-link:hover {
