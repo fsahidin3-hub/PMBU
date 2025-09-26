@@ -12,17 +12,15 @@
       background-size: cover;
       color: #fff;
       text-align: center;
+      scroll-behavior: smooth;
+    }
+    .overlay {
+      background: rgba(0,0,0,0.6);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
-    }
-    .overlay {
-      background: rgba(0,0,0,0.6);
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 600px;
-      margin: auto;
+      padding: 30px 15px;
     }
     h1 {
       font-size: 2.5em;
@@ -35,22 +33,52 @@
       background: #ffd700;
       color: #000;
       padding: 12px 20px;
-      margin-top: 20px;
+      margin: 20px 0;
       border-radius: 30px;
       font-weight: bold;
       text-decoration: none;
       transition: 0.3s;
     }
     .btn:hover { background: #ffea00; }
+    section {
+      padding: 50px 20px;
+      background: rgba(0,0,0,0.8);
+      margin: 20px;
+      border-radius: 10px;
+    }
+    section h2 {
+      color: #ffd700;
+      margin-bottom: 15px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 10px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
     footer {
-      margin-top: 40px;
+      margin-top: 30px;
       font-size: 0.9em;
       color: #ccc;
     }
+    audio { display: none; }
   </style>
 </head>
 <body>
-  <div class="overlay">
+  <!-- Musik otomatis -->
+  <audio autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Bagian awal -->
+  <div class="overlay" id="home">
     <h1>Undangan Pengajian</h1>
     <p>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</p>
     <p>Dengan hormat, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara pengajian:</p>
@@ -58,14 +86,30 @@
     <p><b>Tanggal:</b> 10 Oktober 2025</p>
     <p><b>Waktu:</b> 14:00 WIB</p>
     <p><b>Tempat:</b> Masjid Al-Ikhlas, Bandung</p>
-
-    <a href="https://wa.me/6281234567890?text=Assalamu'alaikum%2C%20Saya%20akan%20hadir%20di%20pengajian" class="btn">
-      Konfirmasi Kehadiran
-    </a>
-
-    <footer>
-      © 2025 Panitia Pengajian
-    </footer>
+    <a href="#galeri" class="btn">Lihat Galeri</a>
+    <a href="https://wa.me/6281234567890?text=Assalamu'alaikum%2C%20Saya%20akan%20hadir%20di%20pengajian" class="btn">Konfirmasi Kehadiran</a>
   </div>
+
+  <!-- Galeri -->
+  <section id="galeri">
+    <h2>Galeri</h2>
+    <div class="gallery">
+      <img src="https://picsum.photos/300/200?random=1" alt="Foto 1">
+      <img src="https://picsum.photos/300/200?random=2" alt="Foto 2">
+      <img src="https://picsum.photos/300/200?random=3" alt="Foto 3">
+      <img src="https://picsum.photos/300/200?random=4" alt="Foto 4">
+    </div>
+  </section>
+
+  <!-- Kontak -->
+  <section id="kontak">
+    <h2>Kontak Panitia</h2>
+    <p>📱 WhatsApp: <a href="https://wa.me/6281234567890" style="color:#ffd700;">+62 812-3456-7890</a></p>
+    <p>📧 Email: panitia@example.com</p>
+  </section>
+
+  <footer>
+    © 2025 Panitia Pengajian
+  </footer>
 </body>
 </html>
