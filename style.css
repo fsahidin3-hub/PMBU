@@ -3,38 +3,55 @@ body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0; /* Warna latar belakang umum */
+    background-color: #f0f0f0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     min-height: 100vh;
     color: #333;
 }
 
-/* Import Font Arab untuk Kaligrafi */
-@import url('https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&display=swap');
-
-/* Kontainer Poster Utama */
-.poster-container {
-    display: flex;
+/* Kontainer Utama - Sekarang HANYA 1 Kolom */
+.poster-container-flow {
     background-color: white;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-    max-width: 900px; /* Lebar poster yang cukup besar */
+    max-width: 600px; /* Lebar maksimum untuk tampilan vertikal */
     width: 95%;
     border-radius: 10px;
-    overflow: hidden; /* Penting untuk gambar yang keluar border */
+    overflow: hidden;
+    margin: 20px 0;
 }
 
-/* Kolom Kiri (Konten Teks) */
-.left-column {
-    flex: 2; /* Mengambil bagian yang lebih besar */
-    padding: 30px 40px;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Untuk menempatkan elemen di bagian atas, tengah, bawah */
-    text-align: left;
+/* BLOK FOTO USTADZ PALING ATAS */
+.ustadz-top-photo {
+    background-color: #006400; /* Latar belakang hijau */
+    padding-top: 20px;
+    padding-bottom: 0; /* Padding bawah dihilangkan agar menyatu dengan konten */
+    text-align: center;
     position: relative;
+    overflow: hidden;
+    /* Motif di latar belakang blok ustadz paling atas */
+    background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 L 0 20" fill="none" stroke="%23005000" stroke-width="0.5"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+    background-size: 30px 30px;
+    opacity: 0.9; /* Sedikit lebih gelap agar foto lebih menonjol */
+}
+.ustadz-img-top {
+    max-width: 70%; 
+    height: auto;
+    display: block;
+    margin: 0 auto -20px auto; /* Margin bawah negatif untuk menaikkan sedikit foto */
+    position: relative;
+    z-index: 2; /* Agar foto di atas motif */
+}
+
+
+/* Blok Konten Setelah Foto Ustadz */
+.top-content-block {
+    padding: 30px 40px 10px 40px;
+    text-align: left;
+    position: relative; /* Agar z-index bisa bekerja jika ada elemen lain */
+    z-index: 1;
+    background-color: white; /* Pastikan latar belakang putih */
 }
 
 .top-tag {
@@ -42,26 +59,23 @@ body {
     font-weight: 700;
     color: #333;
     margin-bottom: 10px;
+    text-align: center; /* Pusatkan "TERBUKA UNTUK UMUM" */
 }
 
+/* Styling Kaligrafi */
 .kaligrafi-area {
     margin: 10px 0 20px 0;
+    text-align: center; /* Pusatkan kaligrafi */
 }
-/* Styling untuk kaligrafi teks (jika tidak ada gambar terpisah) */
 .kaligrafi-text {
     font-family: 'Scheherazade New', serif;
-    font-size: 2.2em; /* Ukuran kaligrafi */
-    color: #006400; /* Warna hijau tua */
+    font-size: 2.2em;
+    color: #006400;
     line-height: 1.2;
-    margin: 0;
-    direction: rtl; /* Untuk teks Arab, kanan ke kiri */
-    text-align: left; /* Sesuaikan agar rata kiri */
-}
-.kaligrafi-img { /* Jika menggunakan gambar kaligrafi */
-    max-width: 80%; /* Sesuaikan ukuran gambar kaligrafi */
-    height: auto;
-    display: block; /* Hilangkan spasi bawah */
-    margin-left: -10px; /* Sedikit geser ke kiri agar mirip poster */
+    margin: 0 auto; /* Pusatkan secara horizontal */
+    direction: rtl; 
+    text-align: center; /* Pusatkan teks Arab */
+    max-width: 90%; /* Batasi lebar agar tidak terlalu panjang */
 }
 
 .event-type {
@@ -70,228 +84,107 @@ body {
     color: #555;
     margin-top: 30px;
     margin-bottom: 5px;
+    text-align: center; /* Pusatkan */
 }
 
 .event-title {
-    font-family: 'Montserrat', sans-serif; /* Menggunakan Montserrat tebal */
-    font-size: 3.5em; /* Ukuran sangat besar */
-    font-weight: 900; /* Extra bold */
-    line-height: 0.9; /* Jarak antar baris lebih rapat */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5em;
+    font-weight: 900;
+    line-height: 0.9;
     color: #333;
     margin: 0;
+    text-align: center; /* Pusatkan */
 }
 
 .event-details {
     margin-top: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    text-align: center; /* Pusatkan detail */
 }
 
 .detail-item {
     display: flex;
     align-items: center;
+    justify-content: center; /* Pusatkan item detail */
     margin-bottom: 10px;
     font-size: 1.1em;
     font-weight: 700;
     color: #555;
+    padding-left: 0; /* Hapus padding agar tidak tergeser */
 }
 
 .detail-item .icon {
     font-size: 1.5em;
     margin-right: 15px;
-    color: #006400; /* Hijau tua */
+    color: #006400;
 }
 
+/* BLOK USTADZ INFO (Hijau Penuh) */
 .ustadz-info {
-    background-color: #006400; /* Hijau tua */
+    background-color: #006400;
     color: white;
     padding: 15px 20px;
     font-size: 1.3em;
     font-weight: 700;
     text-align: center;
-    border-radius: 5px;
-    margin-top: 30px;
+    margin: 0;
 }
 
-.bottom-section {
-    display: flex;
-    justify-content: flex-start; /* Logo PMBU di kiri bawah */
-    align-items: flex-end; /* Pusatkan secara vertikal jika ada elemen lain */
-    margin-top: 40px;
+/* BLOK LOGO PMBU */
+.pmbu-logo-block {
+    background-color: white; /* Pastikan latar belakang putih */
+    padding: 30px 40px 10px 40px; /* Padding bawah lebih kecil */
+    text-align: center;
 }
-
 .logo-pmbu {
-    text-align: left;
+    text-align: center;
+    margin: 0 auto;
 }
 .pmbu-logo-img {
-    max-width: 100px; /* Ukuran logo PMBU */
+    max-width: 100px;
     height: auto;
     margin-bottom: 5px;
-    /* Latar belakang transparan pada gambar akan terlihat bagus */
 }
-.logo-pmbu p {
+.pmbu-logo-block p {
     font-size: 0.8em;
     color: #777;
     margin: 0;
 }
 
-
-/* Kolom Kanan (Gambar & QR) */
-.right-column {
-    flex: 1; /* Mengambil bagian yang lebih kecil */
-    background-color: #006400; /* Warna hijau seperti poster */
-    position: relative;
-    overflow: hidden; /* Penting untuk motif */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 30px; /* Padding atas untuk motif */
-    padding-bottom: 30px; /* Padding bawah untuk QR */
-}
-
-/* Motif di latar belakang kanan (sedikit lebih kompleks) */
-.right-column::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 L 0 20" fill="none" stroke="%23005000" stroke-width="0.5"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
-    background-size: 30px 30px; /* Ukuran motif */
-    opacity: 0.3; /* Transparansi motif */
-    z-index: 0;
-}
-
-.ustadz-image-area {
-    position: relative;
-    z-index: 1;
+/* BLOK WHATSAPP QR CODE */
+.whatsapp-qr-block {
+    background-color: white; /* Latar belakang putih */
+    padding: 10px 40px 30px 40px; /* Padding atas lebih kecil */
     text-align: center;
-    width: 100%;
-    flex-grow: 1; /* Agar mengambil ruang tengah yang tersedia */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px; /* Jarak dari atas */
+    border-top: 1px solid #eee; /* Garis pemisah opsional */
 }
-.ustadz-img {
-    max-width: 90%; /* Sesuaikan ukuran foto ustadz */
-    height: auto;
-    /* Foto ustadz di poster tidak bulat, jadi kita hilangkan border-radius */
-    /* border-radius: 50%; */ 
-    border: none; /* Hilangkan border jika tidak diinginkan */
-    box-sizing: border-box; /* Pastikan border tidak menambah ukuran */
-}
-
 .whatsapp-info {
     text-align: center;
-    color: white;
+    color: #333; /* Warna teks kembali hitam/abu-abu */
     font-size: 0.9em;
-    z-index: 1;
-    margin-top: 20px; /* Jarak dari foto ustadz */
 }
 .whatsapp-info p {
     margin-bottom: 10px;
     font-weight: 700;
 }
 .qr-code-img {
-    max-width: 100px; /* Ukuran QR Code */
+    max-width: 100px;
     height: auto;
-    background-color: white; /* Latar belakang putih untuk QR agar terbaca */
+    background-color: white;
     padding: 5px;
     border-radius: 3px;
 }
 
-/* Penyesuaian untuk nama personalisasi (jika digunakan) */
+/* Penyesuaian untuk nama personalisasi */
 .recipient-name {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.5em; /* Ukuran lebih kecil dari sebelumnya */
+    font-size: 1.5em;
     font-weight: 700;
-    color: #006400; /* Warna hijau */
+    color: #006400;
     margin: 15px 0;
     padding: 10px 0;
-    background-color: #e0f2f0; /* Latar belakang hijau muda */
+    background-color: #e0f2f0;
     border-radius: 5px;
     text-align: center;
-}
-
-/* Responsif untuk layar kecil (ponsel) */
-@media (max-width: 768px) {
-    .poster-container {
-        flex-direction: column; /* Kolom jadi bertumpuk */
-        border-radius: 0; /* Hilangkan border-radius di ponsel */
-        max-width: 100%;
-        width: 100%;
-        box-shadow: none;
-    }
-
-    .left-column {
-        padding: 20px 25px;
-        text-align: center;
-        flex: none; /* Reset flex */
-    }
-
-    .top-tag {
-        font-size: 1em;
-        text-align: center;
-    }
-
-    .kaligrafi-text {
-        font-size: 1.8em;
-        text-align: center;
-    }
-    .kaligrafi-img {
-        max-width: 70%;
-        margin: 0 auto; /* Pusatkan gambar kaligrafi */
-    }
-
-    .event-title {
-        font-size: 2.5em; /* Ukuran font lebih kecil di ponsel */
-    }
-
-    .event-type {
-        font-size: 1em;
-    }
-
-    .event-details {
-        margin-top: 20px;
-        margin-bottom: 20px;
-        text-align: center;
-        display: block; /* Agar detail item tidak flexbox lagi */
-    }
-
-    .detail-item {
-        justify-content: center; /* Pusatkan icon dan teks */
-        font-size: 1em;
-    }
-
-    .ustadz-info {
-        font-size: 1.1em;
-        padding: 10px 15px;
-    }
-
-    .bottom-section {
-        justify-content: center; /* Pusatkan logo PMBU */
-        margin-top: 30px;
-    }
-    .logo-pmbu {
-        text-align: center;
-    }
-
-    .right-column {
-        flex: none; /* Reset flex */
-        padding: 20px 10px;
-        min-height: 250px; /* Tinggi minimum untuk kolom kanan di ponsel */
-    }
-
-    .ustadz-img {
-        max-width: 70%; /* Ukuran foto ustadz di ponsel */
-    }
-
-    .whatsapp-info p {
-        font-size: 0.8em;
-    }
-    .qr-code-img {
-        max-width: 80px; /* Ukuran QR code di ponsel */
-    }
 }
