@@ -3,113 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Undangan Pengajian</title>
+  <title>Undangan Khataman</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: url("https://picsum.photos/800/1200?blur=2") no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
-      text-align: center;
-      scroll-behavior: smooth;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('https://i.ibb.co/McqdXhC/background.jpg') no-repeat center center/cover;
+      color: #333;
     }
-    .overlay {
-      background: rgba(0,0,0,0.6);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 30px 15px;
+    header {
+      text-align: center;
+      padding: 50px 20px;
+      background: rgba(255,255,255,0.8);
     }
     h1 {
       font-size: 2.5em;
-      margin-bottom: 15px;
-      color: #ffd700;
+      margin: 0;
     }
-    p { margin: 10px 0; line-height: 1.6; }
-    .btn {
-      display: inline-block;
-      background: #ffd700;
-      color: #000;
-      padding: 12px 20px;
-      margin: 20px 0;
-      border-radius: 30px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-    .btn:hover { background: #ffea00; }
     section {
-      padding: 50px 20px;
-      background: rgba(0,0,0,0.8);
+      padding: 20px;
+      background: rgba(255,255,255,0.9);
       margin: 20px;
       border-radius: 10px;
     }
-    section h2 {
-      color: #ffd700;
-      margin-bottom: 15px;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 10px;
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 8px;
-      transition: transform 0.3s;
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #007BFF;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
     }
     footer {
-      margin-top: 30px;
+      text-align: center;
+      padding: 10px;
       font-size: 0.9em;
-      color: #ccc;
+      color: #555;
     }
-    audio { display: none; }
   </style>
 </head>
 <body>
-  <!-- Musik otomatis -->
-  <audio autoplay loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-  </audio>
+  <header>
+    <h1>Undangan Khataman Ponpes</h1>
+    <p>Dengan hormat kami mengundang Bapak/Ibu/Saudara/i untuk hadir</p>
+  </header>
 
-  <!-- Bagian awal -->
-  <div class="overlay" id="home">
-    <h1>Undangan Pengajian</h1>
-    <p>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</p>
-    <p>Dengan hormat, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara pengajian:</p>
-    <p><b>Tema:</b> Meneladani Akhlak Rasulullah SAW</p>
-    <p><b>Tanggal:</b> 10 Oktober 2025</p>
-    <p><b>Waktu:</b> 14:00 WIB</p>
-    <p><b>Tempat:</b> Masjid Al-Ikhlas, Bandung</p>
-    <a href="#galeri" class="btn">Lihat Galeri</a>
-    <a href="https://wa.me/6281234567890?text=Assalamu'alaikum%2C%20Saya%20akan%20hadir%20di%20pengajian" class="btn">Konfirmasi Kehadiran</a>
-  </div>
-
-  <!-- Galeri -->
-  <section id="galeri">
-    <h2>Galeri</h2>
-    <div class="gallery">
-      <img src="https://picsum.photos/300/200?random=1" alt="Foto 1">
-      <img src="https://picsum.photos/300/200?random=2" alt="Foto 2">
-      <img src="https://picsum.photos/300/200?random=3" alt="Foto 3">
-      <img src="https://picsum.photos/300/200?random=4" alt="Foto 4">
-    </div>
+  <section>
+    <h2>Detail Acara</h2>
+    <p><b>Tanggal:</b> Minggu, 1 Oktober 2025</p>
+    <p><b>Waktu:</b> 08.00 WIB - selesai</p>
+    <p><b>Tempat:</b> Pondok Pesantren Al-Barokah</p>
   </section>
 
-  <!-- Kontak -->
-  <section id="kontak">
-    <h2>Kontak Panitia</h2>
-    <p>📱 WhatsApp: <a href="https://wa.me/6281234567890" style="color:#ffd700;">+62 812-3456-7890</a></p>
-    <p>📧 Email: panitia@example.com</p>
+  <section>
+    <h2>Konfirmasi Kehadiran</h2>
+    <a href="https://wa.me/6281234567890?text=InsyaAllah%20saya%20hadir" class="btn">Konfirmasi via WhatsApp</a>
   </section>
 
   <footer>
-    © 2025 Panitia Pengajian
+    <p>Terima kasih atas doa dan kehadirannya 🙏</p>
   </footer>
 </body>
 </html>
