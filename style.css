@@ -1,68 +1,208 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pengajian Rutin Malam Jumat</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="poster-container-flow">
-        
-        <div class="top-content-block">
-            <p class="top-tag">TERBUKA UNTUK UMUM</p>
-            
-            <div class="kaligrafi-area">
-                <p class="kaligrafi-text">السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</p> 
-            </div>
+/* Styling Umum */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    color: #333;
+}
 
-            <p class="event-type">PENGAJIAN RUTIN</p>
-            <h1 class="event-title">Malam<br>Jumat</h1>
+/* Kontainer Utama - 1 Kolom Vertikal */
+.poster-container-flow {
+    background-color: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 95%;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px 0;
+}
 
-            <div class="event-details">
-                <div class="detail-item">
-                    <span class="icon">&#128467;</span> <span>KAMIS</span>
-                </div>
-                <div class="detail-item">
-                    <span class="icon">&#128337;</span> <span>19.30 - SELESAI</span>
-                </div>
-                <div class="detail-item">
-                    <span class="icon">&#128205;</span> <span>MASJID AL BAROKAH N.A</span>
-                </div>
-            </div>
-        </div>
-        
-        <div class="ustadz-photo-position">
-            <img src="ustadz.png" alt="Ustadz Sunarya" class="ustadz-img-mid">
-            
-            <div class="ustadz-name-overlay">
-                <span>USTADZ SUNARYA</span>
-            </div>
-        </div>
-        
-        <div class="pmbu-logo-block">
-            <div class="logo-pmbu">
-                <img src="logo.png" alt="Logo PMBU" class="pmbu-logo-img">
-                <p>PEMUDA MIJAH BUTUH UBAR</p>
-            </div>
-        </div>
+/* Blok Konten Paling Atas - FIX PADDING & ALIGNMENT */
+.top-content-block {
+    padding: 30px 40px 10px 40px; /* Padding dikembalikan */
+    text-align: center; /* FIX: Pusatkan semua teks */
+    background-color: white;
+}
 
-        <div class="whatsapp-qr-block">
-             <div class="whatsapp-info">
-                <p>BERGABUNG BERSAMA KAMI DI WHATSAPP</p>
-                
-                <div class="qr-link-group"> 
-                    <img src="qr-code.jpg" alt="QR Code WhatsApp" class="qr-code-img">
-                    <a href="https://chat.whatsapp.com/K60ZmdMqyo7ITQqU5OZhpG?mode=ems_copy_t" class="whatsapp-link">Link Grup WhatsApp</a>
-                </div>
-                
-            </div>
-        </div>
+.top-tag {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
 
-    </div>
+/* Styling Kaligrafi */
+.kaligrafi-area {
+    margin: 10px 0 20px 0;
+    text-align: center;
+}
+.kaligrafi-text {
+    font-family: 'Scheherazade New', serif;
+    font-size: 2.2em;
+    color: #006400;
+    line-height: 1.2;
+    margin: 0 auto;
+    direction: rtl; 
+    text-align: center;
+    max-width: 90%;
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+.event-type {
+    font-size: 1.2em;
+    font-weight: 400;
+    color: #555;
+    margin-top: 30px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.event-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5em;
+    font-weight: 900;
+    line-height: 0.9;
+    color: #333;
+    margin: 0;
+    text-align: center;
+}
+
+.event-details {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #555;
+    padding-left: 0;
+}
+
+.detail-item .icon {
+    font-size: 1.5em;
+    margin-right: 15px;
+    color: #006400;
+}
+
+/* BLOK FOTO USTADZ */
+.ustadz-photo-position {
+    background-color: white; 
+    padding: 20px 0 0 0; 
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.ustadz-img-mid {
+    max-width: 100%; 
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Style untuk nama Ustadz yang menyatu di bawah foto */
+.ustadz-name-overlay {
+    background-color: #006400; /* FIX: Pastikan warna hijau */
+    color: white;
+    padding: 15px 20px;
+    font-size: 1.3em; /* FIX: Ukuran font diperbaiki */
+    font-weight: 700; /* FIX: Ketebalan font diperbaiki */
+    text-align: center;
+    margin-top: 0;
+}
+
+
+/* BLOK LOGO PMBU */
+.pmbu-logo-block {
+    background-color: white;
+    padding: 30px 40px 10px 40px;
+    text-align: center;
+}
+.logo-pmbu {
+    text-align: center;
+    margin: 0 auto;
+}
+.pmbu-logo-img {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 5px;
+}
+.pmbu-logo-block p {
+    font-size: 0.8em;
+    color: #777;
+    margin: 0;
+}
+
+/* BLOK WHATSAPP QR CODE */
+.whatsapp-qr-block {
+    background-color: white;
+    padding: 10px 40px 30px 40px;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.whatsapp-info {
+    text-align: center;
+    color: #333;
+    font-size: 0.9em;
+}
+
+.qr-link-group {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    margin-top: 10px;
+}
+
+.whatsapp-info p {
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.qr-code-img {
+    max-width: 100px;
+    height: auto;
+    background-color: white;
+    padding: 5px;
+    border-radius: 3px;
+    margin-bottom: 0;
+    margin-right: 15px;
+}
+
+/* STYLE UNTUK LINK WHATSAPP */
+.whatsapp-link {
+    font-size: 1em;
+    font-weight: 700;
+    color: #006400; 
+    text-decoration: none; 
+}
+.whatsapp-link:hover {
+    text-decoration: underline;
+}
+
+/* Penyesuaian untuk nama personalisasi */
+.recipient-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #006400;
+    margin: 15px 0;
+    padding: 10px 0;
+    background-color: #e0f2f0;
+    border-radius: 5px;
+    text-align: center;
+}
