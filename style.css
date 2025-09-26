@@ -22,10 +22,10 @@ body {
     margin: 20px 0;
 }
 
-/* Blok Konten Paling Atas - FIX PADDING & ALIGNMENT */
+/* Blok Konten Paling Atas */
 .top-content-block {
-    padding: 30px 40px 10px 40px; /* Padding dikembalikan */
-    text-align: center; /* FIX: Pusatkan semua teks */
+    padding: 30px 40px 10px 40px;
+    text-align: center;
     background-color: white;
 }
 
@@ -95,6 +95,16 @@ body {
     color: #006400;
 }
 
+/* STYLING BARU UNTUK IKON LOKASI KUSTOM */
+.location-custom-icon {
+    width: 25px; 
+    height: auto;
+    margin-right: 15px; 
+    /* Mengubah ikon hitam menjadi hijau */
+    filter: invert(30%) sepia(90%) saturate(700%) hue-rotate(90deg) brightness(80%);
+}
+
+
 /* BLOK FOTO USTADZ */
 .ustadz-photo-position {
     background-color: white; 
@@ -116,11 +126,11 @@ body {
 
 /* Style untuk nama Ustadz yang menyatu di bawah foto */
 .ustadz-name-overlay {
-    background-color: #006400; /* FIX: Pastikan warna hijau */
+    background-color: #006400; 
     color: white;
     padding: 15px 20px;
-    font-size: 1.3em; /* FIX: Ukuran font diperbaiki */
-    font-weight: 700; /* FIX: Ketebalan font diperbaiki */
+    font-size: 1.3em;
+    font-weight: 700;
     text-align: center;
     margin-top: 0;
 }
@@ -161,6 +171,7 @@ body {
     font-size: 0.9em;
 }
 
+/* MENGATUR QR DAN LINK AGAR SEJAJAR */
 .qr-link-group {
     display: flex; 
     align-items: center; 
@@ -180,7 +191,7 @@ body {
     padding: 5px;
     border-radius: 3px;
     margin-bottom: 0;
-    margin-right: 15px;
+    margin-right: 15px; 
 }
 
 /* STYLE UNTUK LINK WHATSAPP */
