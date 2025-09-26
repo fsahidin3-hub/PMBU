@@ -90,6 +90,7 @@ body {
 }
 
 .detail-item .icon {
+    /* Style untuk icon Calendar dan Clock */
     font-size: 1.5em;
     margin-right: 15px;
     color: #006400;
@@ -171,7 +172,6 @@ body {
     font-size: 0.9em;
 }
 
-/* MENGATUR QR DAN LINK AGAR SEJAJAR */
 .qr-link-group {
     display: flex; 
     align-items: center; 
