@@ -81,7 +81,7 @@ body {
 .detail-item {
     display: flex;
     align-items: center;
-    justify-content: center; /* INI KUNCI CENTER ALIGNMENT */
+    justify-content: center;
     margin-bottom: 10px;
     font-size: 1.1em;
     font-weight: 700;
@@ -105,17 +105,18 @@ body {
 
 /* STYLING KHUSUS UNTUK BLOK LOKASI DENGAN LINK */
 .location-block-with-link {
-    /* HAPUS SEMUA ALIGNMENT BERMASALAH DARI SINI */
     align-items: center; 
 }
 .location-text-group {
     display: flex;
     flex-direction: column;
-    /* HAPUS align-items: flex-start; untuk mengembalikan alignment */
-    text-align: left; /* Biarkan teks rata kiri di kolomnya sendiri */
-    margin-top: 0; /* Reset margin */
+    align-items: center; /* FIX: MEMUSATKAN TEKS DAN LINK */
+    text-align: center; /* FIX: MEMASTIKAN TEKS RATA TENGAH */
+    margin-top: 0;
 }
-
+.location-text-group span {
+    font-size: 1em; 
+}
 /* STYLE UNTUK LINK GOOGLE MAPS BARU */
 .maps-link {
     font-size: 0.9em;
@@ -123,6 +124,7 @@ body {
     color: #006400;
     text-decoration: none;
     margin-top: 2px;
+    
 }
 .maps-link:hover {
     text-decoration: underline;
@@ -150,93 +152,3 @@ body {
 
 /* Style untuk nama Ustadz yang menyatu di bawah foto */
 .ustadz-name-overlay {
-    background-color: #006400; 
-    color: white;
-    padding: 15px 20px;
-    font-size: 1.3em;
-    font-weight: 700;
-    text-align: center;
-    margin-top: 0;
-}
-
-
-/* BLOK LOGO PMBU */
-.pmbu-logo-block {
-    background-color: white;
-    padding: 30px 40px 10px 40px;
-    text-align: center;
-}
-.logo-pmbu {
-    text-align: center;
-    margin: 0 auto;
-}
-.pmbu-logo-img {
-    max-width: 100px;
-    height: auto;
-    margin-bottom: 5px;
-}
-.pmbu-logo-block p {
-    font-size: 0.8em;
-    color: #777;
-    margin: 0;
-}
-
-/* BLOK WHATSAPP QR CODE */
-.whatsapp-qr-block {
-    background-color: white;
-    padding: 10px 40px 30px 40px;
-    text-align: center;
-    border-top: 1px solid #eee;
-}
-
-.whatsapp-info {
-    text-align: center;
-    color: #333;
-    font-size: 0.9em;
-}
-
-.qr-link-group {
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    margin-top: 10px;
-}
-
-.whatsapp-info p {
-    margin-bottom: 10px;
-    font-weight: 700;
-}
-
-.qr-code-img {
-    max-width: 100px;
-    height: auto;
-    background-color: white;
-    padding: 5px;
-    border-radius: 3px;
-    margin-bottom: 0;
-    margin-right: 15px; 
-}
-
-/* STYLE UNTUK LINK WHATSAPP */
-.whatsapp-link {
-    font-size: 1em;
-    font-weight: 700;
-    color: #006400; 
-    text-decoration: none; 
-}
-.whatsapp-link:hover {
-    text-decoration: underline;
-}
-
-/* Penyesuaian untuk nama personalisasi */
-.recipient-name {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5em;
-    font-weight: 700;
-    color: #006400;
-    margin: 15px 0;
-    padding: 10px 0;
-    background-color: #e0f2f0;
-    border-radius: 5px;
-    text-align: center;
-}
