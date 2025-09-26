@@ -1,35 +1,25 @@
+// Memastikan semua elemen HTML sudah dimuat sebelum menjalankan script
+document.addEventListener('DOMContentLoaded', (event) => {
+    // Mengambil parameter URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const kpd = urlParams.get('kpd'); // Mencari parameter 'kpd'
 
-// script.js - kontrol audio & smooth scroll sederhana
-document.addEventListener('DOMContentLoaded', function(){
-  const audio = document.getElementById('bg-audio');
-  const btn = document.getElementById('audio-toggle');
+    if (kpd) {
+        const container = document.querySelector('.invitation-container');
+        const targetElement = document.createElement('h2');
 
-  // Karena browser sering nge-block autoplay, tombol play untuk start audio
-  let playing = false;
-  btn.addEventListener('click', function(){
-    if(!playing){
-      audio.play().catch(()=>{
-        // autoplay blocked
-      });
-      btn.textContent = 'Pause Shalawat';
-      playing = true;
-    } else {
-      audio.pause();
-      btn.textContent = 'Play Shalawat';
-      playing = false;
+        // Mengubah format URL menjadi teks yang bisa dibaca (mengganti %20 dan + dengan spasi)
+        const decodedName = decodeURIComponent(kpd).replace(/\+/g, ' ');
+
+        targetElement.innerHTML = `Kepada Yth. <br> <strong>${decodedName}</strong>`;
+        targetElement.classList.add('recipient-name');
+
+        // Menempatkan nama tamu tepat setelah header utama
+        const header = container.querySelector('header');
+        if (header) {
+            header.insertAdjacentElement('afterend', targetElement);
+        } else {
+             container.prepend(targetElement);
+        }
     }
-  });
-
-  // Jika browser mengizinkan autoplay tanpa interaksi, update tombol
-  audio.addEventListener('play', ()=>{ btn.textContent = 'Pause Shalawat'; playing=true; });
-  audio.addEventListener('pause', ()=>{ btn.textContent = 'Play Shalawat'; playing=false; });
-
-  // Smooth scroll behavior handled by CSS scroll-behavior but ensure older browsers
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const target = document.querySelector(link.getAttribute('href'));
-      if(target) target.scrollIntoView({behavior:'smooth'});
-    });
-  });
 });
