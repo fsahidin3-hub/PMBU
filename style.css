@@ -95,18 +95,17 @@ body {
     color: #006400;
 }
 
-/* BLOK FOTO USTADZ (POSISI AKHIR) */
+/* BLOK FOTO USTADZ (Perbaikan Warna dan Posisi) */
 .ustadz-photo-position {
-    background-color: white; /* FIX: LATAR BELAKANG PUTIH */
+    background-color: white; /* FIX: LATAR BELAKANG PUTIH (Overwrites all previous background properties) */
     padding: 20px 0 0 0; 
     text-align: center;
     position: relative;
     overflow: hidden;
+    /* SEMUA KODE MOTIF HIJAU DIHAPUS DARI SINI */
 }
-/* Blok motif dihilangkan karena background putih */
 
 .ustadz-img-mid {
-    /* FIX UKURAN */
     max-width: 100%; 
     width: 100%;
     height: auto;
@@ -118,13 +117,13 @@ body {
 
 /* Style untuk nama Ustadz yang menyatu di bawah foto */
 .ustadz-name-overlay {
-    background-color: #006400; /* Warna hijau untuk bar nama */
+    background-color: #006400; 
     color: white;
     padding: 15px 20px;
-    font-size: 1.3em;
-    font-weight: 700;
+    font-size: 1.3em; /* FIX: Ukuran font diperbaiki */
+    font-weight: 700; /* FIX: Ketebalan font diperbaiki */
     text-align: center;
-    margin-top: 0; /* Menempel ke foto */
+    margin-top: 0;
 }
 
 
