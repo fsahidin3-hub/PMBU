@@ -11,47 +11,22 @@ body {
     color: #333;
 }
 
-/* Kontainer Utama - Sekarang HANYA 1 Kolom */
+/* Kontainer Utama - 1 Kolom Vertikal */
 .poster-container-flow {
     background-color: white;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-    max-width: 600px; /* Lebar maksimum untuk tampilan vertikal */
+    max-width: 600px;
     width: 95%;
     border-radius: 10px;
     overflow: hidden;
     margin: 20px 0;
 }
 
-/* BLOK FOTO USTADZ PALING ATAS */
-.ustadz-top-photo {
-    background-color: #006400; /* Latar belakang hijau */
-    padding-top: 20px;
-    padding-bottom: 0; /* Padding bawah dihilangkan agar menyatu dengan konten */
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    /* Motif di latar belakang blok ustadz paling atas */
-    background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 L 0 20" fill="none" stroke="%23005000" stroke-width="0.5"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
-    background-size: 30px 30px;
-    opacity: 0.9; /* Sedikit lebih gelap agar foto lebih menonjol */
-}
-.ustadz-img-top {
-    max-width: 70%; 
-    height: auto;
-    display: block;
-    margin: 0 auto -20px auto; /* Margin bawah negatif untuk menaikkan sedikit foto */
-    position: relative;
-    z-index: 2; /* Agar foto di atas motif */
-}
-
-
-/* Blok Konten Setelah Foto Ustadz */
+/* Blok Konten Paling Atas */
 .top-content-block {
     padding: 30px 40px 10px 40px;
     text-align: left;
-    position: relative; /* Agar z-index bisa bekerja jika ada elemen lain */
-    z-index: 1;
-    background-color: white; /* Pastikan latar belakang putih */
+    background-color: white;
 }
 
 .top-tag {
@@ -59,23 +34,23 @@ body {
     font-weight: 700;
     color: #333;
     margin-bottom: 10px;
-    text-align: center; /* Pusatkan "TERBUKA UNTUK UMUM" */
+    text-align: center;
 }
 
 /* Styling Kaligrafi */
 .kaligrafi-area {
     margin: 10px 0 20px 0;
-    text-align: center; /* Pusatkan kaligrafi */
+    text-align: center;
 }
 .kaligrafi-text {
     font-family: 'Scheherazade New', serif;
     font-size: 2.2em;
     color: #006400;
     line-height: 1.2;
-    margin: 0 auto; /* Pusatkan secara horizontal */
+    margin: 0 auto;
     direction: rtl; 
-    text-align: center; /* Pusatkan teks Arab */
-    max-width: 90%; /* Batasi lebar agar tidak terlalu panjang */
+    text-align: center;
+    max-width: 90%;
 }
 
 .event-type {
@@ -84,7 +59,7 @@ body {
     color: #555;
     margin-top: 30px;
     margin-bottom: 5px;
-    text-align: center; /* Pusatkan */
+    text-align: center;
 }
 
 .event-title {
@@ -94,30 +69,54 @@ body {
     line-height: 0.9;
     color: #333;
     margin: 0;
-    text-align: center; /* Pusatkan */
+    text-align: center;
 }
 
 .event-details {
     margin-top: 30px;
     margin-bottom: 20px;
-    text-align: center; /* Pusatkan detail */
+    text-align: center;
 }
 
 .detail-item {
     display: flex;
     align-items: center;
-    justify-content: center; /* Pusatkan item detail */
+    justify-content: center;
     margin-bottom: 10px;
     font-size: 1.1em;
     font-weight: 700;
     color: #555;
-    padding-left: 0; /* Hapus padding agar tidak tergeser */
+    padding-left: 0;
 }
 
 .detail-item .icon {
     font-size: 1.5em;
     margin-right: 15px;
     color: #006400;
+}
+
+/* BLOK FOTO USTADZ (POSISI BARU) */
+.ustadz-photo-position {
+    /* Latar belakang hijau tempat foto berada */
+    background-color: #006400; 
+    padding: 20px 0; 
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    /* Motif di latar belakang */
+    background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 L 0 20" fill="none" stroke="%23005000" stroke-width="0.5"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+    background-size: 30px 30px;
+    opacity: 0.9;
+}
+.ustadz-img-mid {
+    /* FIX UKURAN: Maksimum 70% dari lebar layar */
+    max-width: 70%; 
+    width: 100%; /* Memastikan gambar menyesuaikan lebar kontainer */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 
 /* BLOK USTADZ INFO (Hijau Penuh) */
@@ -133,8 +132,8 @@ body {
 
 /* BLOK LOGO PMBU */
 .pmbu-logo-block {
-    background-color: white; /* Pastikan latar belakang putih */
-    padding: 30px 40px 10px 40px; /* Padding bawah lebih kecil */
+    background-color: white;
+    padding: 30px 40px 10px 40px;
     text-align: center;
 }
 .logo-pmbu {
@@ -154,14 +153,14 @@ body {
 
 /* BLOK WHATSAPP QR CODE */
 .whatsapp-qr-block {
-    background-color: white; /* Latar belakang putih */
-    padding: 10px 40px 30px 40px; /* Padding atas lebih kecil */
+    background-color: white;
+    padding: 10px 40px 30px 40px;
     text-align: center;
-    border-top: 1px solid #eee; /* Garis pemisah opsional */
+    border-top: 1px solid #eee;
 }
 .whatsapp-info {
     text-align: center;
-    color: #333; /* Warna teks kembali hitam/abu-abu */
+    color: #333;
     font-size: 0.9em;
 }
 .whatsapp-info p {
