@@ -3,61 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Undangan Digital Khataman Ponpes Anda</title>
+    <title>Pengajian Rutin Malam Jumat</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="invitation-container">
-        
-        <header>
-            <p class="greeting">Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
-            <h1>UNDANGAN KHATAMAN & WISUDA</h1>
-            <p class="school-name">Pondok Pesantren Al-Hidayah</p>
-        </header>
-
-        <section class="details">
-            <h2>Dengan memohon Ridho Allah SWT, kami mengundang Bapak/Ibu/Sdr/i untuk menghadiri acara:</h2>
+    <div class="poster-container">
+        <div class="left-column">
+            <p class="top-tag">TERBUKA UNTUK UMUM</p>
             
-            <div class="event-info">
-                <div class="info-block">
-                    <h3>Tanggal</h3>
-                    <p>Minggu, 10 Dzulhijjah 1447 H</p>
-                    <p class="date-large">29 Juni 2025</p>
+            <div class="kaligrafi-area">
+                <p class="kaligrafi-text">السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</p> 
                 </div>
-                <div class="info-block">
-                    <h3>Waktu</h3>
-                    <p class="time-large">08:00 WIB</p>
-                    <p>(Selesai Sholat Idul Adha)</p>
+
+            <p class="event-type">PENGAJIAN RUTIN</p>
+            <h1 class="event-title">Malam<br>Jumat</h1>
+
+            <div class="event-details">
+                <div class="detail-item">
+                    <span class="icon">&#128467;</span> <span>KAMIS</span>
+                </div>
+                <div class="detail-item">
+                    <span class="icon">&#128337;</span> <span>19.30 - SELESAI</span>
+                </div>
+                <div class="detail-item">
+                    <span class="icon">&#128205;</span> <span>MASJID AL BAROKAH N.A</span>
                 </div>
             </div>
 
-            <p class="location">Bertempat di: <br> Gedung Serbaguna Pondok Pesantren Al-Hidayah, Jakarta Timur</p>
-        </section>
+            <div class="ustadz-info">
+                <span>USTADZ SUNARYA</span>
+            </div>
 
-        <footer class="footer">
-            <p>Atas kehadiran dan do'anya, kami ucapkan terima kasih. <br> Wassalamu'alaikum Warahmatullahi Wabarakatuh.</p>
-        </footer>
+            <div class="bottom-section">
+                <div class="logo-pmbu">
+                    <img src="logo-pmbu.png" alt="Logo PMBU" class="pmbu-logo-img">
+                    <p>PEMUDA MIJAH BUTUH UBAR</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-column">
+            <div class="ustadz-image-area">
+                <img src="ustadz-sunarya.png" alt="Ustadz Sunarya" class="ustadz-img">
+            </div>
+            <div class="whatsapp-info">
+                <p>BERGABUNG BERSAMA KAMI DI WHATSAPP</p>
+                <img src="whatsapp-qr.png" alt="QR Code WhatsApp" class="qr-code-img">
+            </div>
+        </div>
     </div>
 
-    <script>
-        // Fungsi untuk mengambil parameter 'kpd' dari URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const kpd = urlParams.get('kpd');
-        
-        if (kpd) {
-            const container = document.querySelector('.invitation-container');
-            const targetElement = document.createElement('h2');
-            
-            // Mengubah format URL menjadi teks yang bisa dibaca (misal: Pemuda%20Pemudi menjadi Pemuda Pemudi)
-            const decodedName = decodeURIComponent(kpd).replace(/\+/g, ' '); 
-            
-            targetElement.innerHTML = `Kepada Yth. <br> **${decodedName}**`;
-            targetElement.classList.add('recipient-name');
-            
-            // Menempatkan nama tamu di bagian paling atas kartu undangan
-            container.prepend(targetElement);
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
