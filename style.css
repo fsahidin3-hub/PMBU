@@ -95,14 +95,13 @@ body {
     color: #006400;
 }
 
-/* BLOK FOTO USTADZ (Perbaikan Warna dan Posisi) */
+/* BLOK FOTO USTADZ */
 .ustadz-photo-position {
-    background-color: white; /* FIX: LATAR BELAKANG PUTIH (Overwrites all previous background properties) */
+    background-color: white; 
     padding: 20px 0 0 0; 
     text-align: center;
     position: relative;
     overflow: hidden;
-    /* SEMUA KODE MOTIF HIJAU DIHAPUS DARI SINI */
 }
 
 .ustadz-img-mid {
@@ -120,8 +119,8 @@ body {
     background-color: #006400; 
     color: white;
     padding: 15px 20px;
-    font-size: 1.3em; /* FIX: Ukuran font diperbaiki */
-    font-weight: 700; /* FIX: Ketebalan font diperbaiki */
+    font-size: 1.3em;
+    font-weight: 700;
     text-align: center;
     margin-top: 0;
 }
@@ -170,6 +169,20 @@ body {
     background-color: white;
     padding: 5px;
     border-radius: 3px;
+    margin-bottom: 10px; /* Tambahkan ruang di bawah QR code */
+}
+
+/* STYLE BARU UNTUK LINK WHATSAPP */
+.whatsapp-link {
+    display: block; 
+    margin-top: 15px; 
+    font-size: 1em;
+    font-weight: 700;
+    color: #006400; /* Warna hijau khas */
+    text-decoration: none; 
+}
+.whatsapp-link:hover {
+    text-decoration: underline;
 }
 
 /* Penyesuaian untuk nama personalisasi */
