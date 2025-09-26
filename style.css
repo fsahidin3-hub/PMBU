@@ -81,7 +81,7 @@ body {
 .detail-item {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; /* INI KUNCI CENTER ALIGNMENT */
     margin-bottom: 10px;
     font-size: 1.1em;
     font-weight: 700;
@@ -105,26 +105,24 @@ body {
 
 /* STYLING KHUSUS UNTUK BLOK LOKASI DENGAN LINK */
 .location-block-with-link {
-    align-items: center; /* FIX: Ini yang membuat ikon dan teks sejajar di tengah secara vertikal */
+    /* HAPUS SEMUA ALIGNMENT BERMASALAH DARI SINI */
+    align-items: center; 
 }
 .location-text-group {
     display: flex;
-    flex-direction: column; 
-    align-items: flex-start; /* JANGAN UBAH INI: agar teks Alamat dan Link Maps rata kiri di kolomnya sendiri */
-    text-align: left; /* FIX: Pastikan teks di dalam kolom ini rata kiri */
-    margin-top: -10px; /* FIX: Sesuaikan posisi agar lebih sejajar dengan ikon vertikal */
+    flex-direction: column;
+    /* HAPUS align-items: flex-start; untuk mengembalikan alignment */
+    text-align: left; /* Biarkan teks rata kiri di kolomnya sendiri */
+    margin-top: 0; /* Reset margin */
 }
-.location-text-group span {
-    font-size: 1em; 
-}
-/* STYLE UNTUK LINK GOOGLE MAPS */
+
+/* STYLE UNTUK LINK GOOGLE MAPS BARU */
 .maps-link {
     font-size: 0.9em;
     font-weight: 500;
-    color: #006400; 
+    color: #006400;
     text-decoration: none;
-    margin-top: 2px; 
-    
+    margin-top: 2px;
 }
 .maps-link:hover {
     text-decoration: underline;
