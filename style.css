@@ -90,7 +90,6 @@ body {
 }
 
 .detail-item .icon {
-    /* Style untuk icon Calendar dan Clock */
     font-size: 1.5em;
     margin-right: 15px;
     color: #006400;
@@ -103,6 +102,31 @@ body {
     margin-right: 15px; 
     /* Mengubah ikon hitam menjadi hijau */
     filter: invert(30%) sepia(90%) saturate(700%) hue-rotate(90deg) brightness(80%);
+}
+
+/* STYLING KHUSUS UNTUK BLOK LOKASI DENGAN LINK */
+.location-block-with-link {
+    align-items: flex-start; /* Agar ikon berada di bagian atas teks */
+}
+.location-text-group {
+    display: flex;
+    flex-direction: column; /* Teks alamat dan link Maps bertumpuk */
+    align-items: flex-start; /* Meratakan teks ke kiri */
+}
+.location-text-group span {
+    font-size: 1em; 
+}
+/* STYLE UNTUK LINK GOOGLE MAPS BARU */
+.maps-link {
+    font-size: 0.9em;
+    font-weight: 500;
+    color: #006400; /* Warna hijau */
+    text-decoration: none;
+    margin-top: 2px; /* Jarak antara alamat dan link maps */
+    
+}
+.maps-link:hover {
+    text-decoration: underline;
 }
 
 
