@@ -1,62 +1,63 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Undangan Pengajian</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Digital Khataman Ponpes Anda</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- AUDIO: letakkan file shalawat di assets/shalawat.mp3 atau ganti path di script.js -->
-  <audio id="bg-audio" loop preload="auto">
-    <source src="assets/shalawat.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
+    <div class="invitation-container">
+        
+        <header>
+            <p class="greeting">Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
+            <h1>UNDANGAN KHATAMAN & WISUDA</h1>
+            <p class="school-name">Pondok Pesantren Al-Hidayah</p>
+        </header>
 
-  <div class="hero" id="home">
-    <div class="hero-overlay">
-      <h1>Undangan Pengajian</h1>
-      <p class="arab">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
-      <p class="desc">Kami mengundang Bapak/Ibu/Saudara/i untuk hadir pada pengajian dengan tema:</p>
-      <p class="theme">"Meneladani Akhlak Rasulullah SAW"</p>
+        <section class="details">
+            <h2>Dengan memohon Ridho Allah SWT, kami mengundang Bapak/Ibu/Sdr/i untuk menghadiri acara:</h2>
+            
+            <div class="event-info">
+                <div class="info-block">
+                    <h3>Tanggal</h3>
+                    <p>Minggu, 10 Dzulhijjah 1447 H</p>
+                    <p class="date-large">29 Juni 2025</p>
+                </div>
+                <div class="info-block">
+                    <h3>Waktu</h3>
+                    <p class="time-large">08:00 WIB</p>
+                    <p>(Selesai Sholat Idul Adha)</p>
+                </div>
+            </div>
 
-      <div class="meta">
-        <div><strong>Tanggal</strong><br>10 Oktober 2025</div>
-        <div><strong>Waktu</strong><br>14:00 WIB</div>
-        <div><strong>Tempat</strong><br>Masjid Al-Ikhlas</div>
-      </div>
+            <p class="location">Bertempat di: <br> Gedung Serbaguna Pondok Pesantren Al-Hidayah, Jakarta Timur</p>
+        </section>
 
-      <div class="actions">
-        <a class="btn" href="#galeri">Lihat Galeri</a>
-        <a class="btn btn-ws" href="https://wa.me/6281234567890?text=Assalamu'alaikum%2C%20InsyaAllah%20saya%20akan%20hadir" target="_blank" rel="noopener">Konfirmasi via WhatsApp</a>
-      </div>
-
-      <div class="audio-control">
-        <button id="audio-toggle">Play Shalawat</button>
-      </div>
+        <footer class="footer">
+            <p>Atas kehadiran dan do'anya, kami ucapkan terima kasih. <br> Wassalamu'alaikum Warahmatullahi Wabarakatuh.</p>
+        </footer>
     </div>
-  </div>
 
-  <section id="galeri" class="section">
-    <h2>Galeri Kegiatan</h2>
-    <div class="gallery">
-      <img src="https://picsum.photos/seed/1/600/400" alt="Foto 1">
-      <img src="https://picsum.photos/seed/2/600/400" alt="Foto 2">
-      <img src="https://picsum.photos/seed/3/600/400" alt="Foto 3">
-      <img src="https://picsum.photos/seed/4/600/400" alt="Foto 4">
-    </div>
-  </section>
-
-  <section id="kontak" class="section">
-    <h2>Kontak Panitia</h2>
-    <p>WhatsApp: <a href="https://wa.me/6281234567890">+62 812-3456-7890</a></p>
-    <p>Email: panitia@example.com</p>
-  </section>
-
-  <footer class="footer">
-    <p>© 2025 Panitia Pengajian</p>
-  </footer>
-
-  <script src="script.js"></script>
+    <script>
+        // Fungsi untuk mengambil parameter 'kpd' dari URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const kpd = urlParams.get('kpd');
+        
+        if (kpd) {
+            const container = document.querySelector('.invitation-container');
+            const targetElement = document.createElement('h2');
+            
+            // Mengubah format URL menjadi teks yang bisa dibaca (misal: Pemuda%20Pemudi menjadi Pemuda Pemudi)
+            const decodedName = decodeURIComponent(kpd).replace(/\+/g, ' '); 
+            
+            targetElement.innerHTML = `Kepada Yth. <br> **${decodedName}**`;
+            targetElement.classList.add('recipient-name');
+            
+            // Menempatkan nama tamu di bagian paling atas kartu undangan
+            container.prepend(targetElement);
+        }
+    </script>
 </body>
 </html>
