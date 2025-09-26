@@ -97,20 +97,18 @@ body {
 
 /* BLOK FOTO USTADZ (POSISI AKHIR) */
 .ustadz-photo-position {
-    background-color: #006400; 
-    padding: 20px 0; 
+    background-color: white; /* FIX: LATAR BELAKANG PUTIH */
+    padding: 20px 0 0 0; 
     text-align: center;
     position: relative;
     overflow: hidden;
-    /* Motif di latar belakang */
-    background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 L 0 20" fill="none" stroke="%23005000" stroke-width="0.5"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
-    background-size: 30px 30px;
-    opacity: 0.9;
 }
+/* Blok motif dihilangkan karena background putih */
+
 .ustadz-img-mid {
-    /* Perbaikan Final Ukuran: Memaksa gambar menyesuaikan lebar kontainer */
+    /* FIX UKURAN */
     max-width: 100%; 
-    width: 100%; /* Memastikan gambar menyesuaikan lebar kontainer */
+    width: 100%;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -118,16 +116,17 @@ body {
     z-index: 2;
 }
 
-/* BLOK USTADZ INFO (Hijau Penuh) */
-.ustadz-info {
-    background-color: #006400;
+/* Style untuk nama Ustadz yang menyatu di bawah foto */
+.ustadz-name-overlay {
+    background-color: #006400; /* Warna hijau untuk bar nama */
     color: white;
     padding: 15px 20px;
     font-size: 1.3em;
     font-weight: 700;
     text-align: center;
-    margin: 0;
+    margin-top: 0; /* Menempel ke foto */
 }
+
 
 /* BLOK LOGO PMBU */
 .pmbu-logo-block {
