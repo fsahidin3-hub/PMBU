@@ -95,9 +95,8 @@ body {
     color: #006400;
 }
 
-/* BLOK FOTO USTADZ (POSISI BARU) */
+/* BLOK FOTO USTADZ (POSISI AKHIR) */
 .ustadz-photo-position {
-    /* Latar belakang hijau tempat foto berada */
     background-color: #006400; 
     padding: 20px 0; 
     text-align: center;
@@ -109,8 +108,8 @@ body {
     opacity: 0.9;
 }
 .ustadz-img-mid {
-    /* FIX UKURAN: Maksimum 70% dari lebar layar */
-    max-width: 70%; 
+    /* Perbaikan Final Ukuran: Memaksa gambar menyesuaikan lebar kontainer */
+    max-width: 100%; 
     width: 100%; /* Memastikan gambar menyesuaikan lebar kontainer */
     height: auto;
     display: block;
