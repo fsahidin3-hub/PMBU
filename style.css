@@ -1,32 +1,90 @@
-
-/* style.css - Undangan Pengajian - responsive sederhana */
-:root{
-  --accent:#ffd54f;
-  --dark:#0f1720;
-  --muted:#adb5bd;
+/* Styling Umum */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f2e8; /* Warna latar belakang krem/gading */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+    /* Bisa tambahkan background-image di sini untuk motif atau foto */
 }
-*{box-sizing:border-box}
-body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; color:#111;background:#fafafa;}
-.hero{min-height:80vh; display:flex; align-items:center; justify-content:center; background-image:url('https://i.ibb.co/McqdXhC/background.jpg'); background-size:cover; background-position:center;}
-.hero-overlay{background:rgba(0,0,0,0.55); padding:36px; border-radius:12px; color:#fff; max-width:900px; text-align:center;}
-.hero h1{font-size:2.6rem; margin-bottom:6px; color:var(--accent);}
-.arab{font-size:1.1rem; opacity:0.9; margin-bottom:8px;}
-.desc{margin:12px 0 6px; font-size:1rem;}
-.theme{font-weight:700; font-size:1.25rem; margin-bottom:14px;}
-.meta{display:flex; gap:12px; justify-content:center; margin:14px 0; flex-wrap:wrap;}
-.meta div{background:rgba(255,255,255,0.06); padding:10px 16px; border-radius:8px; min-width:120px;}
-.actions{margin-top:12px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap;}
-.btn{background:var(--accent); color:#111; padding:12px 18px; border-radius:999px; text-decoration:none; font-weight:700; box-shadow:0 6px 18px rgba(0,0,0,0.2);}
-.btn-ws{background:#25D366; color:#fff;}
-.audio-control{margin-top:12px;}
-.audio-control button{background:transparent; border:1px solid rgba(255,255,255,0.2); color:#fff; padding:8px 12px; border-radius:8px; cursor:pointer;}
-.section{padding:36px 18px; max-width:1000px; margin:18px auto; background:linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.96)); border-radius:10px;}
-.section h2{text-align:center; color:var(--dark); margin-bottom:12px;}
-.gallery{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px;}
-.gallery img{width:100%; height:150px; object-fit:cover; border-radius:8px; transition:transform 0.25s ease; cursor:pointer;}
-.gallery img:hover{transform:scale(1.03);}
-.footer{text-align:center; padding:20px 10px; color:var(--muted); font-size:0.95rem;}
-@media(max-width:600px){
-  .hero h1{font-size:1.8rem;}
-  .meta div{min-width:100px; font-size:0.95rem;}
+
+/* Kontainer Undangan (Kartu) */
+.invitation-container {
+    background-color: white;
+    padding: 40px 30px;
+    margin: 20px;
+    max-width: 600px; /* Lebar maksimal seperti kartu */
+    width: 90%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 5px solid #daa520; /* Border warna emas */
+    border-radius: 10px;
+}
+
+/* Judul Utama */
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2em;
+    color: #8b4513; /* Warna cokelat/marun tua */
+    margin: 5px 0;
+    line-height: 1.2;
+}
+
+/* Nama Penerima (yang diambil dari URL) */
+.recipient-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8em;
+    color: #daa520; /* Warna Emas */
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #fffaf0; 
+    border-radius: 5px;
+}
+
+/* Detail Acara */
+.event-info {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0;
+}
+
+.info-block {
+    flex-basis: 45%;
+    padding: 15px;
+    border: 1px dashed #ccc;
+    border-radius: 5px;
+}
+
+.info-block h3 {
+    color: #006400; /* Hijau tua */
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+.date-large, .time-large {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #8b4513; /* Cokelat tua */
+    margin: 5px 0;
+}
+
+/* Responsif untuk ponsel */
+@media (max-width: 500px) {
+    .invitation-container {
+        padding: 20px 15px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .event-info {
+        flex-direction: column; /* Detail tanggal dan waktu menjadi vertikal di HP */
+        gap: 20px;
+    }
 }
